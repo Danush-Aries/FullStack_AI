@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FullStack AI</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo">&#10024; FullStack AI</span>
+      </div>
+      <button id="newChatBtn" class="new-chat-btn">+ New Chat</button>
+      <nav id="historyList" class="history-list"></nav>
+      <div class="sidebar-footer">
+        <span>Powered by OpenAI</span>
+      </div>
+    </aside>
+
+    <!-- Main chat area -->
+    <main class="chat-container">
+      <header class="chat-header">
+        <h1 id="chatTitle">New Conversation</h1>
+        <div class="model-badge" id="modelBadge">gpt-4o-mini</div>
+      </header>
+
+      <div id="messages" class="messages">
+        <div class="welcome">
+          <div class="welcome-icon">&#129302;</div>
+          <h2>How can I help you today?</h2>
+          <p>Ask me anything — I'm an AI assistant ready to help with coding, writing, analysis, and more.</p>
+          <div class="suggestions">
+            <button class="suggestion-chip" data-text="Explain how neural networks work in simple terms.">Explain neural networks</button>
+            <button class="suggestion-chip" data-text="Write a Python function to reverse a linked list.">Reverse a linked list</button>
+            <button class="suggestion-chip" data-text="What are the pros and cons of REST vs GraphQL?">REST vs GraphQL</button>
+            <button class="suggestion-chip" data-text="Give me 5 tips for writing clean, maintainable code.">Clean code tips</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-area">
+        <div class="input-wrapper">
+          <textarea
+            id="userInput"
+            placeholder="Message FullStack AI..."
+            rows="1"
+            autocomplete="off"
+          ></textarea>
+          <button id="sendBtn" class="send-btn" title="Send message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+        <p class="disclaimer">AI can make mistakes. Verify important information.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
