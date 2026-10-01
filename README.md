@@ -1,15 +1,13 @@
 # FullStack AI
 
-**FastAPI + a dark chat UI, streaming from any OpenAI-compatible model, one process.**
-
-<!-- hero: 1600x600 screenshot of the streaming chat UI mid-response -->
+**FastAPI + a dark chat UI, streaming from OpenAI models, one process.**
 
 ![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o--mini-412991?logo=openai&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-A production-ready fullstack AI chat boilerplate. FastAPI backend, Server-Sent-Events token streaming, a clean dark-mode frontend, and full markdown rendering — all served from one Python process. Clone, add an API key, deploy.
+A fullstack AI chat boilerplate. FastAPI backend, Server-Sent-Events token streaming, a clean dark-mode frontend, and full markdown rendering — all served from one Python process. Clone, add an API key, deploy.
 
 ---
 
@@ -27,7 +25,7 @@ cd FullStack_AI
 pip install -r requirements.txt
 
 cp .env.example .env
-# add OPENAI_API_KEY=sk-...
+# set OPENAI_API_KEY in .env
 
 python run.py
 ```
@@ -47,7 +45,7 @@ FastAPI
    |
    | AsyncOpenAI stream
    v
-OpenAI (any model)
+OpenAI (model set via OPENAI_MODEL)
    |
    | SSE tokens
    v
@@ -57,14 +55,9 @@ Browser renders markdown live
 Endpoints:
 - `POST /api/chat` — full response (blocking)
 - `POST /api/chat/stream` — SSE token stream
-- `GET /api/health` — uptime probe
+- `GET /api/health` — health probe
 
----
-
-## Screenshots
-
-<!-- screenshot: chat-streaming.png -->
-<!-- screenshot: sidebar-history.png -->
+The UI also keeps a conversation history list in the sidebar.
 
 ---
 
@@ -73,7 +66,7 @@ Endpoints:
 | Layer | Tech |
 |---|---|
 | Backend | FastAPI + Uvicorn |
-| LLM | AsyncOpenAI (any OpenAI-compatible endpoint) |
+| LLM | AsyncOpenAI (OpenAI API; model set via `OPENAI_MODEL`) |
 | Transport | Server-Sent Events (SSE) |
 | Frontend | Vanilla JS, no build step |
 | Rendering | Markdown + code blocks + inline formatting |
@@ -96,4 +89,4 @@ Built by [Dhanush](https://github.com/Danush-Aries) — AI engineering + cyberse
 
 ## License
 
-MIT.
+MIT — see [LICENSE](LICENSE).
